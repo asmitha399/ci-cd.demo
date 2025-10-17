@@ -38,8 +38,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: echo "Running tests..."
+      - name: Build application
+        run: echo "Building the applications..."
+
+  deploy:
+      runs-on: ubuntu-latest
+      needs: test
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Deploy the application
+          run: echo "Deploying the applications..."
+      
 
   
 
